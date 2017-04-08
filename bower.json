@@ -1,6 +1,5 @@
 {
     "name": "ft-document-grid-item",
-    "version": "0.0.1",
     "description": "An element that renders a FileThis document thumbnail in a grid list.",
     "main": "ft-document-grid-item.html",
     "dependencies": {

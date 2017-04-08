@@ -1,4 +1,4 @@
-<!-- ft-document-grid-item element demo -->
+<!-- ft-document-list-item element demo -->
 
 <!-- Imports -->
 <link rel="import" href="../../polymer/polymer.html">
@@ -8,7 +8,7 @@
 
 <!--
 
-An element that renders a FileThis document thumbnail in a grid list.
+An element that renders information about a FileThis document in a parent grid
 
 @demo demo/index.html
  -->
@@ -18,7 +18,25 @@ An element that renders a FileThis document thumbnail in a grid list.
 
     <template>
 
-        <ft-document-grid-item></ft-document-grid-item>
+        <div class="layout vertical center">
+
+            <!-- Normal -->
+            <div class="layout horizontal center">
+                <div style="width:115px; font-size:14pt" align="right">Normal:</div>
+                <div style="width:35px;"></div>
+                <ft-document-grid-item id="normal"></ft-document-grid-item>
+            </div>
+
+            <div style="height:25px;"></div>
+
+            <!-- Selected -->
+            <div class="layout horizontal center">
+                <div style="width:115px; font-size:14pt" align="right">Selected:</div>
+                <div style="width:35px;"></div>
+                <ft-document-grid-item id="selected"></ft-document-grid-item>
+            </div>
+
+        </div>
 
     </template>
 
@@ -30,6 +48,38 @@ An element that renders a FileThis document thumbnail in a grid list.
 
             properties:
             {
+            },
+
+            ready: function()
+            {
+                this._loadFakeDocument();
+            },
+
+            _loadFakeDocument: function()
+            {
+                var path = "fake-document.json";
+
+                var xmlHttpRequest = new XMLHttpRequest();
+                xmlHttpRequest.overrideMimeType("application/json");
+                xmlHttpRequest.open('GET', path, true);
+                xmlHttpRequest.onreadystatechange = function()
+                {
+                    if (xmlHttpRequest.readyState == 4 &&
+                        xmlHttpRequest.status == "200")
+                    {
+                        var document = JSON.parse(xmlHttpRequest.responseText);
+
+                        // Normal
+                        var documentNormal = Object.assign({}, document);
+                        normal.document = documentNormal;
+
+                        // Selected
+                        var documentSelected = Object.assign({}, document);
+                        selected.document = documentSelected;
+                        selected.selected = true;
+                    }
+                };
+                xmlHttpRequest.send();
             }
 
         });
