@@ -38,18 +38,18 @@ This element displays a single FileThis document resource, suitable for use in g
                 overflow: hidden;
                 @apply --ft-document-grid-item;
             }
-            .interior {
+            #interior {
                 padding-left: 15px;
                 padding-top: 15px;
                 padding-right: 15px;
                 @apply --ft-document-grid-item-interior;
             }
-            .thumbnail {
+            #thumb {
                 box-shadow: 3px 3px 3px #888888;
                 border: 1px solid #DDD;
                 @apply --ft-document-grid-item-thumbnail;
             }
-            .name {
+            #name {
                 width: 150px;
                 font-family: Arial, Helvetica, sans-serif;
                 font-size: 12px; color: #333333;
@@ -60,17 +60,17 @@ This element displays a single FileThis document resource, suitable for use in g
             }
         </style>
 
-        <div id="interior" class="interior layout vertical center">
+        <div id="interior" class="layout vertical center">
 
             <!-- Thumbnail -->
-            <div id="thumb" class="thumbnail">
+            <div id="thumb">
                 <img src="[[document.thumbnailUrl]]" width="150" height="200" alt="Thumbnail">
             </div>
 
             <div style="height:16px;"></div>
 
             <!-- Name -->
-            <iron-label id="name" class="name">
+            <iron-label id="name">
                 [[document.name]]
             </iron-label>
 
