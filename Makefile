@@ -1,7 +1,7 @@
 # Project configuration
 NAME=ft-document-grid-item
 SRC_DIR=
-VERSION=1.0.23
+VERSION=1.0.24
 LOCAL_PORT=3640
 GITHUB_USER=filethis
 GITHUB_USER_ABBREV=ft
