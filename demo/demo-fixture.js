@@ -26,8 +26,6 @@ An element that renders information about a FileThis document in a parent grid
   from HTML and may be out of place here. Review them and
   then delete this comment!
 */
-import 'ft-element-demo/ft-element-demo.js';
-
 import '@polymer/iron-flex-layout/iron-flex-layout-classes.js';
 import '@polymer/polymer/polymer-legacy.js';
 import '../ft-document-grid-item.js';
