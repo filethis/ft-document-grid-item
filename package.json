@@ -1,6 +1,6 @@
 {
   "description": "An element that renders a FileThis document thumbnail in a grid list.",
-  "name": "ft-document-grid-item",
+  "name": "@filethis/ft-document-grid-item",
   "version": "1.0.24",
   "resolutions": {
     "inherits": "2.0.3",
@@ -15,7 +15,6 @@
     "*.make",
     "*.png",
     "*.svg",
-    ".yalc/",
     "data/",
     "demo/",
     "test/",
